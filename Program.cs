@@ -17,3 +17,17 @@ string[] ReadLineToArray(string value)
         return array;
     }
 }
+//Функция принимает массив слов и искомую длину слов (по дефолту 3). Отсеивает слова
+string[] ConvertArrayForTask1(string[] userArray, int maxLength = 3)
+{
+    string[] newArray = new string[0];
+    for (int i = 0; i < userArray.Length; i++)
+    {
+        if (userArray[i].Length <= maxLength)
+        {
+            Array.Resize(ref newArray, newArray.Length + 1);
+            newArray[newArray.Length - 1] = userArray[i];
+        }
+    }
+    return newArray;
+}
