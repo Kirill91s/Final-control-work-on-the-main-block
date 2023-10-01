@@ -31,3 +31,20 @@ string[] ConvertArrayForTask1(string[] userArray, int maxLength = 3)
     }
     return newArray;
 }
+//Функция принимает массив слов и искомую длину слов (по дефолту 3). Отсеивает слова
+string[] ConvertArrayForTask2(string[] userArray, int maxLength = 3)
+{
+     return userArray = userArray.Where(element => element.Length <= maxLength).ToArray();
+}
+
+void Main()
+{
+   /* string[] userArray = ReadLineToArray("Введите обрабатываемый массив через пробел");
+    Console.WriteLine($"\r\nИсходный массив:\r\n[{string.Join("; ", userArray)}]");
+    Console.WriteLine($"\r\nРезуальтат выполнения первой программы:\r\n[{string.Join("; ", ConvertArrayForTask1(userArray))}]");
+    Console.WriteLine($"\r\nРезуальтат выполнения второй программы:\r\n[{string.Join("; ", ConvertArrayForTask2(userArray))}]");*/
+    Console.WriteLine(Console.ReadLine()!.Split().Where(element => element.Length <= 3).ToArray());
+
+}
+
+Main();
